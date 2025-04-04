@@ -25,6 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute hal_mslgkeeper;
-attribute hal_mslgkeeper_server;
-attribute hal_mslgkeeper_client;
+allow init mnt_user_file:lnk_file { read getattr };
+allow init mslg_rootfs_file:{ dir file } mounton;

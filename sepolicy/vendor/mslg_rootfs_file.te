@@ -25,7 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#allow hal_misys_default mslg_rootfs_file:file { read getattr open };
-#allow hal_misys_default mslg_rootfs_file:dir { read getattr open search };
-
-type mslg_rootfs_file, file_type, data_file_type, mlstrustedobject;
+type mslg_rootfs_file, core_data_file_type, data_file_type, file_type, mlstrustedobject;

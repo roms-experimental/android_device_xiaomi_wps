@@ -53,6 +53,23 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+        vendor/bin/tar-rootfs.sh)
+            sed -i 's/$(getprop ro.product.device)/yudi/g' ${2}
+            ;;
+        vendor/bin/losetup.sh |\
+        vendor/etc/init/mslgservice.rc)
+            sed -i 's/odm/vendor/g' ${2}
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+
+    return 0
+}
+
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 

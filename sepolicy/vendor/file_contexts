@@ -25,9 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow platform_app hal_mslgkeeper_default:binder { call transfer };
-allow platform_app hal_mslgkeeper_hwservice:hwservice_manager find;
+/dev/msl(/.*)?                                                           u:object_r:mslg_rootfs_file:s0
+/dev/shm(/.*)?                                                           u:object_r:mslg_rootfs_file:s0
+/data/rootfs(/.*)?                                                       u:object_r:mslg_rootfs_file:s0
+/data/vendor/mslg(/.*)?                                                  u:object_r:mslg_rootfs_file:s0
 
-allow platform_app mslg_rootfs_file:dir r_dir_perms;
-allow platform_app mslg_rootfs_file:file r_file_perms;
-allow platform_app mslg_rootfs_file:sock_file write;
+/(vendor|system/vendor)/bin/start-rootfs.sh                                    u:object_r:mslgd_exec:s0
+/(vendor|system/vendor)/bin/tar-rootfs.sh                                      u:object_r:mslgd_exec:s0
+/(vendor|system/vendor)/bin/losetup.sh                                         u:object_r:mslgd_exec:s0
+/(vendor|system/vendor)/bin/clear-wpsdata.sh                                   u:object_r:mslgd_exec:s0
+/(vendor|system/vendor)/bin/clear-cajdata.sh                                   u:object_r:mslgd_exec:s0
+/(vendor|system/vendor)/bin/hw/mslgservice                                     u:object_r:mslgd_exec:s0
+
+/(odm|vendor/odm)/etc/assets(/.*)?                                       u:object_r:vendor_file:s0
+/(odm|vendor/odm)/etc/assets/mslgusrimg                                  u:object_r:vendor_file:s0

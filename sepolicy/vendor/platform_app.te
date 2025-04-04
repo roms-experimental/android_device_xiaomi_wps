@@ -25,8 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# MSLgRdp
-user=_app seinfo=mslg_app name=com.xiaomi.mslgrdp domain=mslg_app type=app_data_file levelFrom=all
+allow platform_app mslg_rootfs_file:dir create_dir_perms;
+allow platform_app mslg_rootfs_file:{ file sock_file } create_file_perms;
 
-# WpsLauncher
-user=_app seinfo=mslg_app name=com.xiaomi.wpslauncher domain=mslg_app type=app_data_file levelFrom=all
+set_prop(platform_app, vendor_mslg_prop)

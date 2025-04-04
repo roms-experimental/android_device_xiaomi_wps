@@ -35,12 +35,11 @@ can_profile_perf(mslg_app)
 create_pty(mslg_app)
 perfetto_producer(mslg_app)
 binder_call(mslg_app, gpuservice)
-get_prop(mslg_app, vendor_mslg_prop)
+set_prop(mslg_app, vendor_mslg_prop)
 set_prop(mslg_app, system_prop)
 domain_auto_trans(mslg_app, rs_exec, rs)
 
 allow mslg_app servicemanager:service_manager list;
-allow mslg_app { vendor_hal_perf_hwservice hal_mslgkeeper_hwservice }:hwservice_manager find;
 allow mslg_app {
  app_api_service
  audioserver_service
@@ -59,15 +58,12 @@ allow mslg_app {
 allow mslg_app app_data_file:{ fifo_file lnk_file sock_file } create_file_perms;
 allow mslg_app app_data_file:dir { write add_name search };
 allow mslg_app app_data_file:file { create open };
-auditallow mslg_app app_data_file:file execute;
 allow mslg_app privapp_data_file:lnk_file r_file_perms;
 allow mslg_app trace_data_file:file { read getattr };
 
 allow mslg_app asec_apk_file:dir r_dir_perms;
 allow mslg_app asec_apk_file:file r_file_perms;
 allow mslg_app asec_public_file:file execute;
-
-allow mslg_app hal_mslgkeeper_default:binder { call transfer };
 
 allow mslg_app media_rw_data_file:dir create_dir_perms;
 allow mslg_app media_rw_data_file:file create_file_perms;

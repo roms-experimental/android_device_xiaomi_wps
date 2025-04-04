@@ -1,7 +1,7 @@
+sys.mslg.                          u:object_r:vendor_mslg_prop:s0
 persist.vendor.unzip.mslgrootfs    u:object_r:vendor_mslg_prop:s0
 vendor.mslgrootfs.isready          u:object_r:vendor_mslg_prop:s0
 vendor.mslgrootfs.version          u:object_r:vendor_mslg_prop:s0
 vendor.setup.mslgrootfs            u:object_r:vendor_mslg_prop:s0
-vendor.mslg.mslgusrimg             u:object_r:vendor_mslg_prop:s0
-vendor.mslg.mslgoptimg             u:object_r:vendor_mslg_prop:s0
+vendor.mslg.                       u:object_r:vendor_mslg_prop:s0
 ro.vendor.mslg.rootfs.version      u:object_r:vendor_mslg_prop:s0

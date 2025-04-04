@@ -1,26 +1,21 @@
-# Unpinned blobs from yudi-user 14 UKQ1.230804.001 V816.0.2.0.UMHCNXM release-keys
+# Unpinned blobs from yudi-user 15 AQ3A.241006.001 OS2.0.6.0.VMHCNXM release-keys release-keys
 
 # Assets
-vendor/etc/assets/md5.txt
-vendor/etc/assets/mslgoptimg
-vendor/etc/assets/mslgusrimg
-vendor/etc/assets/rootfs-23.09.12.tgz
-
-# MSLgKeeper
-vendor/lib64/vendor.xiaomi.mslg.keeper@1.0.so
+odm/etc/assets/md5.txt
+odm/etc/assets/mslgusrimg
+odm/etc/assets/rootfs-24.11.22.tgz
 
 # MSLgRdp
 product/app/MSLgRdp/MSLgRdp.apk:vendor/app/MSLgRdp/MSLgRdp.apk
-product/app/MSLgRdp/lib/arm64/libcrypto.so:vendor/app/MSLgRdp/lib/arm64/libcrypto.so
-product/app/MSLgRdp/lib/arm64/libfreerdp2.so:vendor/app/MSLgRdp/lib/arm64/libfreerdp2.so
-product/app/MSLgRdp/lib/arm64/libfreerdp-android.so:vendor/app/MSLgRdp/lib/arm64/libfreerdp-android.so
-product/app/MSLgRdp/lib/arm64/libfreerdp-client2.so:vendor/app/MSLgRdp/lib/arm64/libfreerdp-client2.so
-product/app/MSLgRdp/lib/arm64/liblinux-ime.so:vendor/app/MSLgRdp/lib/arm64/liblinux-ime.so
-product/app/MSLgRdp/lib/arm64/libssl.so:vendor/app/MSLgRdp/lib/arm64/libssl.so
-product/app/MSLgRdp/lib/arm64/libwinpr2.so:vendor/app/MSLgRdp/lib/arm64/libwinpr2.so
 
 # MSLgService
-vendor/bin/hw/mslgservice
+odm/bin/hw/mslgservice:vendor/bin/hw/mslgservice
+odm/bin/clear-cajdata.sh:vendor/bin/clear-cajdata.sh
+odm/bin/clear-wpsdata.sh:vendor/bin/clear-wpsdata.sh
+odm/bin/losetup.sh:vendor/bin/losetup.sh
+odm/bin/start-rootfs.sh:vendor/bin/start-rootfs.sh
+odm/bin/tar-rootfs.sh:vendor/bin/tar-rootfs.sh
+odm/etc/init/mslgservice.rc:vendor/etc/init/mslgservice.rc
 
 # WpsLauncher
--product/data-app/WpsLauncher/WpsLauncher.apk:vendor/app/WpsLauncher/WpsLauncher.apk
+product/data-app/WpsLauncher/WpsLauncher.apk:vendor/app/WpsLauncher/WpsLauncher.apk
